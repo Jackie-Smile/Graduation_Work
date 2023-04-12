@@ -6,7 +6,7 @@
     <properties resource="jdbcConfig.properties"/>
     <typeAliases>
         <!--<typeAlias type="com.PeterAlbus.domain.User" alias="user"/>-->
-        <package name="com.peteralbus.domain"/>
+        <package name="com.jackie.domain"/>
     </typeAliases>
     <environments default="mysql">
         <environment id="mysql">
@@ -21,6 +21,6 @@
     </environments>
     <mappers>
         <!--<mapper resource="com/PeterAlbus/dao/IUserDao.xml"/>-->
-        <package name="com.peteralbus.dao"/>
+        <package name="com.jackie.dao"/>
     </mappers>
 </configuration>
