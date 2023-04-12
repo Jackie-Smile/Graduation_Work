@@ -1,3 +1,3 @@
 # EpidemicTraces
 A web project that shows latest change of COVID-19
-# Graduation_Work
+if you have any questions,please contact me at ljh350661349@163.com
