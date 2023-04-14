@@ -2,33 +2,29 @@ package com.jackie.domain;
 
 public class News
 {
-    String pubDate;
+    String time;
     String title;
-    String summary;
-    String infoSource;
+    String titleUrl;
+    String source;
     String sourceUrl;
-    String province;
-    String provindId;
 
     @Override
     public String toString() {
         return "news{" +
-                "pubDate='" + pubDate + '\'' +
+                "time='" + time + '\'' +
                 ",\n title='" + title + '\'' +
-                ",\n summary='" + summary + '\'' +
-                ",\n infoSource='" + infoSource + '\'' +
+                ",\n titleUrl='" + titleUrl + '\'' +
+                ",\n source='" + source + '\'' +
                 ",\n sourceUrl='" + sourceUrl + '\'' +
-                ",\n province='" + province + '\'' +
-                ",\n provindId='" + provindId + '\'' +
                 '}';
     }
 
-    public String getPubDate() {
-        return pubDate;
+    public String getTime() {
+        return time;
     }
 
-    public void setPubDate(String pubDate) {
-        this.pubDate = pubDate;
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getTitle() {
@@ -39,20 +35,20 @@ public class News
         this.title = title;
     }
 
-    public String getSummary() {
-        return summary;
+    public void setTitleUrl(String titleUrl) {
+        this.titleUrl = titleUrl;
     }
 
-    public void setSummary(String summary) {
-        this.summary = summary;
+    public String getTitleUrl() {
+        return titleUrl;
     }
 
-    public String getInfoSource() {
-        return infoSource;
+    public String getSource() {
+        return source;
     }
 
-    public void setInfoSource(String infoSource) {
-        this.infoSource = infoSource;
+    public void setSource(String source) {
+        this.source = source;
     }
 
     public String getSourceUrl() {
@@ -61,21 +57,5 @@ public class News
 
     public void setSourceUrl(String sourceUrl) {
         this.sourceUrl = sourceUrl;
-    }
-
-    public String getProvince() {
-        return province;
-    }
-
-    public void setProvince(String province) {
-        this.province = province;
-    }
-
-    public String getProvindId() {
-        return provindId;
-    }
-
-    public void setProvindId(String provindId) {
-        this.provindId = provindId;
     }
 }

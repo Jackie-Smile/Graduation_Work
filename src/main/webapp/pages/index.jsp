@@ -49,8 +49,8 @@
 <%--                当前疫情信息<br>累计确诊:<code>${today.getComulative()}</code>,当前确诊:<code>${today.getNewCase()}</code>,死亡:<code>${today.getDeath()}</code>--%>
             </h3>
             <c:forEach items="${newslist}" var="news">
-                <h2>${news.title}</h2>
-                <p>${news.summary}......<a href="${news.sourceUrl}" target="_blank">查看详情</a></p>
+                <h3>${news.time}--${news.source}</h3>
+                <p>${news.title}......<a href="${news.titleUrl}" target="_blank">查看详情</a></p>
             </c:forEach>
         </div>
     </div>
