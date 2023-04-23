@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: wuhon
-  Date: 2021/2/9
-  Time: 13:58
+  User: 35066
+  Date: 2023/4/14
+  Time: 9:42
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -90,7 +90,7 @@
             data: legend,
             selected:{
                 '香港':false,
-                '湖北':false
+                '台湾':false,
             }
         },
         toolbox: {
@@ -138,6 +138,10 @@
         legend: {
             orient: 'vertical',
             left: 'left',
+            selected: {
+                '香港':false,
+                '台湾':false,
+            },
         },
         series: [
             {

@@ -74,7 +74,7 @@ public class ChinaProvinceServiceImpl implements ChinaProvinceService
         StringBuilder json = new StringBuilder();
         try
         {
-            URL urlObject = new URL("https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5");
+            URL urlObject = new URL("http://111.231.75.86:8000/api/provinces/CHN/");
             URLConnection uc = urlObject.openConnection();
             BufferedReader bin = new BufferedReader(new InputStreamReader(uc.getInputStream(), "utf-8"));
             String inputLine = null;
@@ -88,29 +88,21 @@ public class ChinaProvinceServiceImpl implements ChinaProvinceService
         }
         JsonParser parser = new JsonParser();
         JsonElement element = parser.parse(String.valueOf(json));
-        String data = "data";
-        if (element.isJsonObject()) {
-            JsonObject object = element.getAsJsonObject();
-            data = object.get("data").getAsString();
-        }
-        element = parser.parse(data);
-        if (element.isJsonObject())
-        {
-            JsonObject object = element.getAsJsonObject();
-            JsonArray areaTree = object.get("areaTree").getAsJsonArray();
-            JsonObject china=areaTree.get(0).getAsJsonObject();
-            JsonArray children=china.get("children").getAsJsonArray();
-            for (int i = 0; i < children.size(); i++)
-            {
-                ChinaProvince chinaProvince=new ChinaProvince();
-                JsonObject current=children.get(i).getAsJsonObject();
-                String name=current.get("name").getAsString();
-                JsonObject total=current.get("total").getAsJsonObject();
-                int confirm=total.get("confirm").getAsInt();
-                chinaProvince.setName(name);
-                chinaProvince.setValue(confirm);
-                chinaProvinceList.add(chinaProvince);
-            }
+        System.out.println(element);
+        element = element.getAsJsonArray();
+        System.out.println(element);
+        for(int i=0;i<element.getAsJsonArray().size();i++){
+            ChinaProvince chinaProvince=new ChinaProvince();
+            JsonObject current=element.getAsJsonArray().get(i).getAsJsonObject();
+            System.out.println(current);
+            String name=current.get("provinceName").getAsString();
+            System.out.println(name);
+            int confirm=current.get("confirmedCount").getAsInt();
+            System.out.println(confirm);
+            chinaProvince.setName(name);
+            chinaProvince.setValue(confirm);
+            chinaProvinceList.add(chinaProvince);
+            System.out.println(chinaProvince);
         }
         Collections.sort(chinaProvinceList);
         return chinaProvinceList;

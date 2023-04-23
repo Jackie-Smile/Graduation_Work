@@ -1,10 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
-  User: wuhon
-  Date: 2021/3/20
-  Time: 0:45
+  User: 35066
+  Date: 2023/4/14
+  Time: 9:42
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -70,13 +71,13 @@
     var predict=[];
     var adjust=[];
     <c:forEach items="${predictList}" var="predict">
-        date.push('${predict.getDate()}');
+    date.push('${predict.getDate()}');
     <c:choose>
     <c:when test="${predict.getChina_confirm()==0}">
-        a.push('');
+    a.push('');
     </c:when>
     <c:otherwise>
-        a.push(${predict.getChina_confirm()});
+    a.push(${predict.getChina_confirm()});
     </c:otherwise>
     </c:choose>
     <c:choose>
@@ -178,3 +179,4 @@
 </footer>
 </body>
 </html>
+

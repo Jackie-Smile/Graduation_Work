@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 35066
+  Date: 2023/4/14
+  Time: 9:42
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -49,8 +56,8 @@
 <%--                当前疫情信息<br>累计确诊:<code>${today.getComulative()}</code>,当前确诊:<code>${today.getNewCase()}</code>,死亡:<code>${today.getDeath()}</code>--%>
             </h3>
             <c:forEach items="${newslist}" var="news">
-                <h3>${news.time}--${news.source}</h3>
-                <p>${news.title}......<a href="${news.titleUrl}" target="_blank">查看详情</a></p>
+                <h3>${news.title}......</h3>
+                <p>${news.source}--${news.time} <a href="${news.titleUrl}" target="_blank">查看详情</a> </p>
             </c:forEach>
         </div>
     </div>

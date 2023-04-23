@@ -82,6 +82,13 @@ public class china_dailyServiceImpl implements china_dailyService
                 chinaDailyList.add(chinaDaily);
             }
         }
+        //保留chinaDailyList中2022年11月30日之前的数据
+        for (int i = 0; i < chinaDailyList.size(); i++) {
+            if (chinaDailyList.get(i).getDate().after(Date.valueOf("2022-11-30"))){
+                chinaDailyList.remove(i);
+                i--;
+            }
+        }
         return chinaDailyList;
     }
 
